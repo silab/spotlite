@@ -22,7 +22,7 @@ module Spotlite
     
     # Returns title as a string
     def title
-      @title ||= details.at("h1[itemprop='name']").children.first.text.strip
+      @title ||= details.at("h1[itemprop='name']").text.strip
     end
     
     # Returns original non-english title as a string
