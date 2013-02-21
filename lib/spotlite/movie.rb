@@ -22,12 +22,12 @@ module Spotlite
     
     # Returns title as a string
     def title
-      @title ||= details.at("h1.header [itemprop='name']").children.first.text.strip
+      @title ||= details.at("h1.header span.itemprop").text.strip rescue nil
     end
     
     # Returns original non-english title as a string
     def original_title
-      details.at("h1[itemprop='name'] span.title-extra").children.first.text.strip rescue nil
+      details.at("h1.header span.title-extra").text.strip rescue nil
     end
     
     # Returns year of original release as an integer
